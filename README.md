@@ -1,24 +1,24 @@
 # Trunk-Based Development Workshop
 
-### Step 1: Create new repository
-#### สมาชิกคนที่ 1 Repo Owner
+### Step 1: Create new repo by forking repo.
+#### สมาชิกคนที่ A Repo Owner
 ---
-1. เข้า GitHub ด้วยบัญชีของตนเอง, แล้วค้นหา repository ที่ชื่อว่า `cs_github_tbd`
-2. ทำการ Fork repository
-3. ทำการเพิ่มสมาชิกคนอื่นเข้าสู่ repository
-4. ทำการ clone repository จาก GitHub(remote) ลงมาที่ Computer(local) ของตัวเอง
-5. ย้าย directory ไปยัง repository ที่พึ่ง clone มา  
+1. เข้า GitHub ด้วยบัญชีของตนเอง, แล้วค้นหา repo ที่ชื่อว่า `cs_github_tbd`
+2. ทำการ Fork repo
+3. ทำการเพิ่มสมาชิกคนอื่นเข้าสู่ repo
+4. ทำการ clone repo จาก GitHub(remote) ลงมาที่ Computer(local) ของตัวเอง
+5. ย้าย directory ไปยัง repo ที่พึ่ง clone มา  
 
-#### สมาชิกคนที่ 2 และ 3 Collaborator
+#### สมาชิกคนที่ B และ C Collaborator
 ---
-1. รับคำเชิญจากสมาชิกคนที่ 1 เพื่อเข้า repository เดียวกันในกลุ่ม
-2. ทำการ clone repository จาก GitHub(remote) ลงมาที่ Computer(local) ของตัวเอง
-3. ย้าย directory ไปยัง repository ที่พึ่ง clone มา
+1. รับคำเชิญจากสมาชิกคนที่ A เพื่อเข้า repo เดียวกันในกลุ่ม
+2. ทำการ clone repo จาก GitHub(remote) ลงมาที่ Computer(local) ของตัวเอง
+3. ย้าย directory ไปยัง repo ที่พึ่ง clone มา
 
 
-### Step 2: Create conflict
+### Step 2: Edit another file.
         
-#### สมาชิกคนที่ 1 
+#### สมาชิกคนที่ A 
 ---
 1. แก้ไข file ชื่อ style.css โดยแก้ color จาก red เป็น green
 2. ทำการบันทึกการเปลี่ยนแปลง file โดยใช้คำสั่ง
@@ -27,13 +27,13 @@
     $ git add . && git commit -m "Change color red to green"
 ```
 
-3. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repository ด้วยคำสั่ง 
+3. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง 
 
 ```shell
     $ git push
 ```
 
-#### สมาชิกคนที่ 2 (ถ้ามีคนที่ 3 ทำแบบเดียวกับคนที่ 2)
+#### สมาชิกคนที่ B (ถ้ามีคนที่ C ทำแบบเดียวกับคนที่ B)
 ---
 1. แก้ไข file ชื่อ style.css โดยแก้ color จาก red เป็น blue
 2. ทำการบันทึกการเปลี่ยนแปลง file โดยใช้คำสั่ง 
@@ -42,12 +42,12 @@
     $ git add . && git commit -m "Change color red to blue"
 ```
 
-3. **รอคนที่ 1 push ก่อน** จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repository ด้วยคำสั่ง git push
-        หากสมาชิกคนที่ 2 และ 3 เกิด error แปลว่าเกิด conflict เรียบร้อยให้ทำ Step 3 ต่อได้เลย ถ้าไม่ให้ทำซ้ำอีกรอบ
+3. **รอคนที่ A push ก่อน** จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง git push
+        หากสมาชิกคนที่ B และ C เกิด error แปลว่าเกิด conflict เรียบร้อยให้ทำ Step 3 ต่อได้เลย ถ้าไม่ให้ทำซ้ำอีกรอบ
 
 
-### Step 3: Resolve conflict
-#### สมาชิกคนที่ 2 (ถ้ามีคนที่ 3 รอคนที่ 2 ทำเสร็จก่อน แล้วทำแบบเดียวกับคนที่ 2)
+### Step 3: Edit same file, But difference part.
+#### สมาชิกคนที่ B (ถ้ามีคนที่ C รอคนที่ B ทำเสร็จก่อน แล้วทำแบบเดียวกับคนที่ B)
 ---
 1. Update file บนเครื่องให้เหมือนบน GitHub โดยใช้คำสั่ง 
 
@@ -73,11 +73,14 @@
     $ git commit -m "<ข้อความอธิบายการแก้ไข>"
 ```
 
-6. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repository ด้วยคำสั่ง 
+6. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง 
 
 ```shell
     $ git push
 ```
+
+### Step 4: Edit same file, But same part.
+
 
 ### Exercise: จำลองสถานณ์การการแก้ Conflict โดยให้คนในทีมช่วยกันแก้ไข file  ชื่อ script.js โดยเพิ่มคำสั่งที่ทำให้สามารถแสดงชื่อของทุกคนในกลุ่มได้ โดยมีข้อกำหนดดังนี้
 - ใช้คำสั่ง console.log() 
