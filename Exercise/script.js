@@ -7,6 +7,8 @@
 function say_hello() {
     // CODE HERE!!!
     console.log("tanya");
+    console.log("sasivimon_moonrungsee")
+    
 }
 
 // Don’t change the code under this comment!
