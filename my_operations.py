@@ -1,6 +1,6 @@
 # Member A: edit this function.
 def add(num1: int, num2: int) -> None:
-    print("FUCK YOUUUUUUUUUUUUUUUUUUUUUUU");
+    print("Lebron James")
 
 # Member B: edit this function.
 def diff(num1: int, num2: int) -> None:
