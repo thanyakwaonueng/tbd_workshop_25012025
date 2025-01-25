@@ -20,11 +20,11 @@
         
 #### สมาชิกคนที่ A 
 ---
-1. แก้ไข file ชื่อ style.css โดยแก้ color จาก red เป็น green
+1. แก้ไข file ชื่อ greeting_a.py โดยทำการเพิ่ม print ชื่อตัวเองลงไปบน code ในบรรทัดที่ 
 2. ทำการบันทึกการเปลี่ยนแปลง file โดยใช้คำสั่ง
 
 ```shell
-    $ git add . && git commit -m "Change color red to green"
+    $ git add . && git commit -m "create greeting from A"
 ```
 
 3. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง 
@@ -33,22 +33,66 @@
     $ git push
 ```
 
-#### สมาชิกคนที่ B (ถ้ามีคนที่ C ทำแบบเดียวกับคนที่ B)
+#### สมาชิกคนที่ B
 ---
-1. แก้ไข file ชื่อ style.css โดยแก้ color จาก red เป็น blue
+1. แก้ไข file ชื่อ greeting_b.py โดยทำการเพิ่ม print ชื่อตัวเองลงไปบน code
 2. ทำการบันทึกการเปลี่ยนแปลง file โดยใช้คำสั่ง 
 
 ```shell
-    $ git add . && git commit -m "Change color red to blue"
+    $ git add . && git commit -m "create greeting from B"
 ```
 
-3. **รอคนที่ A push ก่อน** จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง git push
-        หากสมาชิกคนที่ B และ C เกิด error แปลว่าเกิด conflict เรียบร้อยให้ทำ Step 3 ต่อได้เลย ถ้าไม่ให้ทำซ้ำอีกรอบ
+3. **รอ A push ก่อน** จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง
 
+```shell
+    $ git push
+```
+
+- `ถ้าเกิด error ขึ้นแปลว่าถูก`  
+4. Update local file ด้วยคำสั่ง
+
+```shell
+    $ git pull
+```
+
+
+#### สมาชิกคนที่ C
+---
+1. แก้ไข file ชื่อ greeting_c.py โดยทำการเพิ่ม print ชื่อตัวเองลงไปบน code
+2. ทำการบันทึกการเปลี่ยนแปลง file โดยใช้คำสั่ง 
+
+```shell
+    $ git add . && git commit -m "create greeting from C"
+```
+
+3. **รอ B push ก่อน** จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง 
+
+```shell
+    $ git push
+```
+
+- `ถ้าเกิด error ขึ้นแปลว่าถูก`  
+4. Update local file ด้วยคำสั่ง
+
+```shell
+    $ git pull
+```
 
 ### Step 3: Edit same file, But difference part.
-#### สมาชิกคนที่ B (ถ้ามีคนที่ C รอคนที่ B ทำเสร็จก่อน แล้วทำแบบเดียวกับคนที่ B)
----
+1. ให้แต่ละคนแก้ไข file ชื่อ my_operator.py โดยทำการแก้ไขให้ function ทำงานได้
+2. ให้ B เป็นคน push ขึ้นไปก่อน โดยที่แต่ละคนยังไม่ต้อง commit ใดๆ
+3. ให้ A ทำการ pull
+4.
+
+```shell
+    $ git add . && git commit -m "create greeting from A"
+```
+
+3. จากนั้นทำการเปลี่ยนแปลงการแก้ไขขึ้นไปบน remote repo ด้วยคำสั่ง 
+
+```shell
+    $ git push
+```
 1. Update file บนเครื่องให้เหมือนบน GitHub โดยใช้คำสั่ง 
 
 ```shell
